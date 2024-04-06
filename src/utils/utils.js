@@ -4,7 +4,6 @@ import url from 'url';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import passport from 'passport';
-import config from '../config/config.js';
 import { faker } from '@faker-js/faker';
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
@@ -60,7 +59,7 @@ export const checkLastConnection = (user) => {
 
 //jwt
 export const generateRestorePasswordToken = (email) => {
-    const token = jwt.sign( {email}, config.jwt_secret, { expiresIn : '1h' } );
+    const token = jwt.sign( {email}, process.env.JWT_SECRET, { expiresIn : '1h' } );
     return token;
 };
 
@@ -73,13 +72,13 @@ export const generateToken = (user) => {
         cart_id : user.cart._id,
         isAdmin : user.role === 'admin'
     }
-    const token = jwt.sign( payload, config.jwt_secret, { expiresIn : '5h' } );
+    const token = jwt.sign( payload, process.env.JWT_SECRET, { expiresIn : '5h' } );
     return token;
 };
 
 export const verifyToken = (token) => {
     return new Promise((resolve, reject) => {
-        jwt.verify(token, config.jwt_secret, (error, payload) => {
+        jwt.verify(token, process.env.JWT_SECRET, (error, payload) => {
             if (error) {
                 reject(error);
             }

@@ -1,25 +1,23 @@
 import nodemailer from 'nodemailer'
 
-import config from '../config/config.js';
-
 export default class EmailService {
 
   static #instance = null;
 
   constructor() {
     this.transport = nodemailer.createTransport({
-      service: config.mail.service,
-      port: config.mail.port,
+      service: process.env.EMAIL_SERVICE,
+      port: process.env.EMAIL_PORT,
       auth: {
-        user: config.mail.user,
-        pass: config.mail.password,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
       },
     });
   }
 
   sendEmail(to, subject, html, attachments = []) {
     return this.transport.sendMail({
-      from: config.mail.user,
+      from: process.env.EMAIL_USER,
       to,
       subject,
       html,

@@ -2,7 +2,6 @@ import { Router } from 'express';
 /*import ProductManager from '../ProductManager.js';*/
 import ProductsManager from '../../controllers/products.controller.js';
 import CartsManager from '../../controllers/carts.controller.js'
-import productModel from '../../dao/models/product.model.js';
 import { buildResponsePaginated, __dirname, authMiddleware, verifyToken } from '../../utils/utils.js';
 import { logger } from '../../config/logger.js';
 import UsersService from '../../services/users.service.js';

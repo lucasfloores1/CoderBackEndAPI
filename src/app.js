@@ -10,7 +10,6 @@ import { init as passportInit } from './config/passport.config.js';
 import productsRoter from './routers/api/products.router.js';
 import cartsRouter from './routers/api/carts.router.js';
 import viewsRouter from './routers/views/views.router.js';
-import config from './config/config.js';
 import authRouter from './routers/api/auth.router.js';
 import { errorHandlerMiddleware } from './middlewares/error-handler.middleware.js'
 import { addLogger } from './config/logger.js';
@@ -20,15 +19,15 @@ const app = express();
 
 //CORS
 app.use(cors({
-  origin: config.front_url,
+  origin: process.env.FRONT_URL,
   credentials: true
 }));
 
-app.use(cookieParser(config.cookie_secret));
+app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(addLogger);
 
 //docs
-if (config.env !== 'prod') {
+if (process.env.NODE_ENV !== 'prod') {
     const swaggerOpts = {
       definition: {
         openapi: '3.0.0',

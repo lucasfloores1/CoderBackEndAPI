@@ -1,9 +1,4 @@
 import CartDTO from "../dto/cart.dto.js";
-import { productsRepository, usersRepository } from "./index.js";
-import EnumsError from '../utils/EnumsError.js';
-import { CustomError } from '../utils/CustomError.js';
-import UsersService from "../services/users.service.js";
-import UserDTO from "../dto/user.dto.js";
 
 export default class CartRepository {
     constructor(dao) {

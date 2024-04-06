@@ -1,7 +1,5 @@
 import TicketDTO from "../dto/ticket.dto.js";
 import { NotFoundException } from "../utils/exception.js";
-import { createTicketCode } from "../utils/utils.js";
-import { productsRepository, cartsRepository, usersRepository } from "./index.js";
 
 export default class TicketRepository {
 
