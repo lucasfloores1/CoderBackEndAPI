@@ -9,7 +9,7 @@
     "test": "mocha --timeout 10000 ./tests/**/*.test.js",
     "test:integrations": "mocha --timeout 10000 ./tests/integrations/*.test.js",
     "test:units": "mocha --timeout 10000 ./tests/units/*.test.js",
-    "start": "node src/app.js"
+    "start": "nodemon --exec node -r dotenv/config src/app.js"
   },
   "author": "",
   "license": "ISC",
