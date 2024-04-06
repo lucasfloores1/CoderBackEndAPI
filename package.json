@@ -1,0 +1,52 @@
+{
+  "name": "entrega4",
+  "version": "1.0.0",
+  "description": "handlebars y websockets",
+  "main": "./src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec node -r dotenv/config .",
+    "test": "mocha --timeout 10000 ./tests/**/*.test.js",
+    "test:integrations": "mocha --timeout 10000 ./tests/integrations/*.test.js",
+    "test:units": "mocha --timeout 10000 ./tests/units/*.test.js",
+    "start": "node src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.0",
+    "@picocss/pico": "^1.5.10",
+    "bcrypt": "^5.1.1",
+    "bootstrap-icons": "^1.11.3",
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.8",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.1",
+    "mongoose-paginate-v2": "^1.7.4",
+    "multer-express-middleware": "^0.0.3",
+    "nanoid": "^5.0.4",
+    "nodemailer": "^6.9.9",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "session-file-store": "^1.5.0",
+    "socket.io": "^4.7.2",
+    "stripe": "^14.24.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.3.0",
+    "supertest": "^6.3.4"
+  }
+}
