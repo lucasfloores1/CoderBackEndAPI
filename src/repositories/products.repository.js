@@ -35,7 +35,7 @@ export default class ProductRepository {
         const result = await this.dao.getPaginatedProducts(criteria, options);
         //DTO Format
         for (let i = 0; i < result.docs.length; i++) {
-            logger.debug('antes del dto', result.docs[i]);
+            logger.debug('antes del dto', result.docs[i]._doc);
             const product = new ProductDTO( result.docs[i]._doc );
             result.docs[i] = product;
         }
