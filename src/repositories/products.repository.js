@@ -32,11 +32,13 @@ export default class ProductRepository {
 
     async getPaginatedProducts (criteria, options){
         const result = await this.dao.getPaginatedProducts(criteria, options);
-        /*//DTO Format
+        //DTO Format
         for (let i = 0; i < result.docs.length; i++) {
+            console.log('antes', result.docs[i]);
             const product = new ProductDTO( result.docs[i] );
+            console.log('pasó');
             result.docs[i] = product;
-        }*/
+        }
         return result;
     }
 
