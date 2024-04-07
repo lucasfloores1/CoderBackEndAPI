@@ -8,7 +8,7 @@ export default class ProductRepository {
 
     async getAll(filter = {}) {
         const products = await this.dao.getAll(filter);
-        return products.map( product => new ProductDTO(product) )
+        return products
     }
 
     async getById(pid) {
