@@ -160,7 +160,8 @@ export const BodyProductSetter = async (req) => {
     }
     const newProduct = {
         ...body,
-        thumbnails
+        thumbnails,
+        owner : req.user.id
     }
     return newProduct;
 }
