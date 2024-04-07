@@ -14,7 +14,7 @@ router.post('/auth/login', async (req, res, next) => {
     const token = await AuthController.login(body);
     logger.debug(`User ${body.email} logged in`);
     res.
-        cookie('accessToken', token, { maxAge: 5 * 60 * 60* 1000, sameSite : 'none', secure : true, domain: process.env.FRONT_SHORT_URL}).
+        cookie('accessToken', token, { maxAge: 5 * 60 * 60* 1000, sameSite : 'none', secure : true}).
         status(200).
         send({ status: 'success' , message : 'Logged in' })
     //view
@@ -44,7 +44,7 @@ router.get('/sessions/github/callback', passport.authenticate('github', { sessio
     const token = generateToken(req.user);
     res.
         status(200).
-        cookie('accessToken', token, { maxAge: 5 * 60 * 60* 1000, sameSite : 'none', secure : true, domain: process.env.FRONT_SHORT_URL}).
+        cookie('accessToken', token, { maxAge: 5 * 60 * 60* 1000, sameSite : 'none', secure : true}).
         send({ status: 'success' })
     //views
     //res.redirect('/products');
