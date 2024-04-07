@@ -37,7 +37,6 @@ export default class ProductRepository {
         for (let i = 0; i < result.docs.length; i++) {
             logger.debug('antes del dto', result.docs[i]);
             const product = new ProductDTO( result.docs[i]._doc );
-            logger.debug('pasó');
             result.docs[i] = product;
         }
         return result;
