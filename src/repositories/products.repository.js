@@ -1,3 +1,4 @@
+import { logger } from '../config/logger.js';
 import ProductDTO from '../dto/product.dto.js';
 
 export default class ProductRepository {
@@ -34,9 +35,9 @@ export default class ProductRepository {
         const result = await this.dao.getPaginatedProducts(criteria, options);
         //DTO Format
         for (let i = 0; i < result.docs.length; i++) {
-            console.log('antes del dto', result.docs[i]);
+            logger.debug('antes del dto', result.docs[i]);
             const product = new ProductDTO( result.docs[i] );
-            console.log('pasó');
+            logger.debug('pasó');
             result.docs[i] = product;
         }
         return result;
