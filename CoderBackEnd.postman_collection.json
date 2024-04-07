@@ -1,0 +1,490 @@
+{
+	"info": {
+		"_postman_id": "1315e3e2-db91-4679-8ddb-7bfd4bd6038b",
+		"name": "CoderBackEnd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27211198"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Documents",
+					"item": [
+						{
+							"name": "Upload id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "postman-cloud:///1eef4eaa-5b9b-45c0-989c-ae0861b79da4"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/auth/users/current/documents/id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"auth",
+										"users",
+										"current",
+										"documents",
+										"id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload address",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "postman-cloud:///1eef4eaa-5b9b-45c0-989c-ae0861b79da4"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/auth/users/current/documents/id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"auth",
+										"users",
+										"current",
+										"documents",
+										"id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "postman-cloud:///1eef4eaa-5b9b-45c0-989c-ae0861b79da4"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/auth/users/current/documents/id",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"auth",
+										"users",
+										"current",
+										"documents",
+										"id"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\" : \"Jhon\",\r\n    \"last_name\" : \"Doe\",\r\n    \"age\" : \"32\",\r\n    \"email\" : \"testemail@gmail.com\",\r\n    \"password\" : \"test\",\r\n    \"role\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/auth/register",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"testemail@gmail.com\",\r\n    \"password\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/auth/login",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/auth/current",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reduced Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/auth/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Premium",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/auth/users/premium/6612b4d0d4f8a4cd415bc0d2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"users",
+								"premium",
+								"6612b4d0d4f8a4cd415bc0d2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Unactives",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/auth/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/products?limit=10&page=1&sort=asc&search=perfume",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "asc"
+								},
+								{
+									"key": "search",
+									"value": "perfume"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/products/6612c3ce67f4359a5fc298f5",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"6612c3ce67f4359a5fc298f5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mocking Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/mockingproducts",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"mockingproducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Crema Tododia",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Crema corporal con prebióticos, aroma avellana y casis",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "crema",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "avellana",
+									"type": "text"
+								},
+								{
+									"key": "isAdmin",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/products",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\" : \"descripcion de prueba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/api/products/6612c3ce67f4359a5fc298f5",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"6612c3ce67f4359a5fc298f5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/products/6612c3ce67f4359a5fc298f5/user/6612b4d0d4f8a4cd415bc0d2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"6612c3ce67f4359a5fc298f5",
+								"user",
+								"6612b4d0d4f8a4cd415bc0d2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/api/carts/6612b4cfd4f8a4cd415bc0d0",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"6612b4cfd4f8a4cd415bc0d0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "https://coder-ecommerce.up.railway.app",
+			"type": "string"
+		}
+	]
+}
