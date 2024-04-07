@@ -153,7 +153,7 @@ export const BodyProductSetter = async (req) => {
     const filesPaths = files.map( file => file.path );
     const defaultPath = `/img/products/default-product.jpg`;
     let thumbnails = [];
-    if (filesPaths) {
+    if (!filesPaths) {
         thumbnails.push(defaultPath);
     } else {
         thumbnails = filesPaths.map(filePath => filePath.replace(/\\/g, '/').replace(/.*img/, imgPath))
