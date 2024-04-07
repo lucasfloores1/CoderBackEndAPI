@@ -87,7 +87,6 @@ router.get('/auth/logout',authMiddleware('jwt'), async (req, res, next) => {
 router.post('/auth/restore-password/email', async (req, res, next) => {
   try {
     const { email } = req.body;
-    console.log(email);
     await AuthController.sendEmailRestorePassword(email);
     res.
       status(200).
@@ -119,7 +118,7 @@ router.post('/auth/restore-password/:token', async (req, res, next) => {
 });
 
 //Premium User
-router.get('/auth/users/premium/:uid', authMiddleware('jwt'), authRole(['user']), async (req,res,next) => {
+router.get('/auth/users/premium/:uid', authMiddleware('jwt'), authRole(['user','premium']), async (req,res,next) => {
   const { uid } = req.params;
   try {
     const user = await AuthController.premiumUser(uid);
