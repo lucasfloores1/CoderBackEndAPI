@@ -329,37 +329,37 @@
 							"formdata": [
 								{
 									"key": "code",
-									"value": "123456",
+									"value": "12345",
 									"type": "text"
 								},
 								{
 									"key": "title",
-									"value": "Crema Tododia",
+									"value": "Producto de Prueba",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "Crema corporal con prebióticos, aroma avellana y casis",
+									"value": "Descripcion de prueba",
 									"type": "text"
 								},
 								{
 									"key": "price",
-									"value": "25",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "stock",
-									"value": "12",
+									"value": "32",
 									"type": "text"
 								},
 								{
 									"key": "type",
-									"value": "crema",
+									"value": "prueba",
 									"type": "text"
 								},
 								{
 									"key": "type",
-									"value": "avellana",
+									"value": "test",
 									"type": "text"
 								},
 								{
