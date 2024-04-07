@@ -8,7 +8,7 @@ import { BodyProductValidator } from '../../middlewares/body-product-validator.j
 
 const router = Router();
 
-router.get( '/products', authMiddleware('jwt'), async (req, res, next) =>{
+router.get( '/products', authMiddleware('jwt'), authRole(['user','premium','admin']), async (req, res, next) =>{
     try {
         const { limit = 10, page = 1, sort, search } = req.query;
         const data = getPaginatedOpts(limit, page, sort, search);
@@ -22,7 +22,7 @@ router.get( '/products', authMiddleware('jwt'), async (req, res, next) =>{
     }
 });
 
-router.get( '/products/:pid', authMiddleware('jwt'), async (req, res, next) =>{
+router.get( '/products/:pid', authMiddleware('jwt'), authRole(['user','premium','admin']), async (req, res, next) =>{
     try {
         const { pid } = req.params;
         const product = await ProductController.getById(pid);

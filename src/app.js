@@ -9,7 +9,7 @@ import passport from 'passport';
 import { init as passportInit } from './config/passport.config.js';
 import productsRoter from './routers/api/products.router.js';
 import cartsRouter from './routers/api/carts.router.js';
-import viewsRouter from './routers/views/views.router.js';
+//import viewsRouter from './routers/views/views.router.js';
 import authRouter from './routers/api/auth.router.js';
 import { errorHandlerMiddleware } from './middlewares/error-handler.middleware.js'
 import { addLogger } from './config/logger.js';
@@ -44,7 +44,6 @@ if (process.env.NODE_ENV !== 'prod') {
   
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static('public'));
 
 //handlebars
@@ -61,8 +60,7 @@ passportInit();
 app.use(passport.initialize());
 
 app.use('/api', productsRoter, cartsRouter, authRouter);
-app.use('/', viewsRouter);
-
+//app.use('/', viewsRouter);
 
 app.use(errorHandlerMiddleware);
 

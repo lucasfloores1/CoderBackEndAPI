@@ -1,5 +1,4 @@
 import { Router } from 'express';
-/*import ProductManager from '../ProductManager.js';*/
 import ProductsManager from '../../controllers/products.controller.js';
 import CartsManager from '../../controllers/carts.controller.js'
 import { buildResponsePaginated, __dirname, authMiddleware, verifyToken } from '../../utils/utils.js';
@@ -8,9 +7,6 @@ import UsersService from '../../services/users.service.js';
 import TicketManager from '../../controllers/tickets.controller.js';
 
 const router = Router();
-
-/*//Instancia de ProductManager
-const pm = new ProductManager(path.join(__dirname,'./products.json'));*/
 
 router.get('/', async (req, res) => {
   try {

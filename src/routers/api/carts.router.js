@@ -7,7 +7,7 @@ import { logger } from '../../config/logger.js';
 const router = Router();
 
 //get by id
-router.get( '/carts/:cid',  authMiddleware('jwt'), async (req, res, next) => {
+router.get( '/carts/:cid',  authMiddleware('jwt'), authRole(['user','premium','admin']), async (req, res, next) => {
     try {
         const { cid } = req.params
         const cart = await CartController.getById(cid);
@@ -38,7 +38,7 @@ router.post( '/carts/:uid/products/:pid', authMiddleware('jwt'), authRole(['user
 });
 
 //delete one product
-router.delete( '/carts/:cid/products/:pid', authMiddleware('jwt'), async (req, res, next) => {
+router.delete( '/carts/:cid/products/:pid', authMiddleware('jwt'), authRole(['user','premium','admin']), async (req, res, next) => {
     try {
         const { cid } = req.params;
         const { pid } = req.params;
@@ -55,7 +55,7 @@ router.delete( '/carts/:cid/products/:pid', authMiddleware('jwt'), async (req, r
 });
 
 //delete all products
-router.delete( '/carts/:cid', authMiddleware('jwt'), async (req, res, next) => {
+router.delete( '/carts/:cid', authMiddleware('jwt'), authRole(['user','premium','admin']), async (req, res, next) => {
     try {
         const { cid } = req.params;
         const updatedCart = await CartController.deleteAllProductsFromCart( cid );
@@ -71,7 +71,7 @@ router.delete( '/carts/:cid', authMiddleware('jwt'), async (req, res, next) => {
 });
 
 //edit quantity of product
-router.put( '/carts/:cid/products/:pid/user/:uid', authMiddleware('jwt'), async (req, res, next) => {
+router.put( '/carts/:cid/products/:pid/user/:uid', authMiddleware('jwt'), authRole(['user','premium','admin']), async (req, res, next) => {
     try {
         const { cid, pid, uid } = req.params;
         const { quantity } = req.body;

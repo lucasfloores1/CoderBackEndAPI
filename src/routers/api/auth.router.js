@@ -54,7 +54,7 @@ router.get('/sessions/github/callback', passport.authenticate('github', { sessio
 });
 
 //Current
-router.get('/auth/current', authMiddleware('jwt'), async (req, res, next) => {
+router.get('/auth/current', authMiddleware('jwt'), authRole(['user','premium','admin']), async (req, res, next) => {
      try {
       const token = req.cookies.accessToken;
       const payload = await verifyToken(token);
@@ -119,7 +119,7 @@ router.post('/auth/restore-password/:token', async (req, res, next) => {
 });
 
 //Premium User
-router.get('/auth/users/premium/:uid', async (req,res,next) => {
+router.get('/auth/users/premium/:uid', authMiddleware('jwt'), authRole(['user']), async (req,res,next) => {
   const { uid } = req.params;
   try {
     const user = await AuthController.premiumUser(uid);
@@ -132,7 +132,7 @@ router.get('/auth/users/premium/:uid', async (req,res,next) => {
 });
 
 //Document uploading
-router.post('/auth/users/current/documents/:typeFile', authMiddleware('jwt'), documentUploader.single('file'), async (req,res,next) => {
+router.post('/auth/users/current/documents/:typeFile', authMiddleware('jwt'), authRole(['user']), documentUploader.single('file'), async (req,res,next) => {
   try {
     const { user, file, params : { typeFile } }= req
     await UserController.uploadFile(user.id, file);
@@ -146,7 +146,7 @@ router.post('/auth/users/current/documents/:typeFile', authMiddleware('jwt'), do
 });
 
 //Get Reduced Users
-router.get('/auth/users', authMiddleware('jwt'), async (req, res, next) => {
+router.get('/auth/users', authMiddleware('jwt'), authRole(['user','premium','admin']), async (req, res, next) => {
   try {
     const users = await UserController.getReducedUsers();
     logger.debug('The list of reduced info users was requested');
